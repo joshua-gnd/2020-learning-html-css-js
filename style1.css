@@ -1,0 +1,30 @@
+th {
+  font-style: italic;
+  background-color: blue;
+  color: white;
+  font-family: sans-serif;
+}
+#head2 {
+  text-align: center;
+  width: 150px;
+}
+#head1,
+#head3 {
+  width: 200px;
+}
+#row3 {
+  background-color: blue;
+  height: 30px;
+}
+#col1 {
+  text-align: left;
+}
+table,
+th,
+td {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+ul {
+  list-style-type: square;
+}

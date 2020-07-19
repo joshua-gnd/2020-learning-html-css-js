@@ -1,0 +1,113 @@
+h1,
+h2 {
+  color: orange;
+}
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+ol {
+  list-style-type: lower-latin;
+}
+table,
+th,
+td {
+  border: 2px solid black;
+  border-collapse: collapse;
+  width: 500px;
+}
+th {
+  background-color: red;
+  color: white;
+  font-family: verdana;
+}
+#table1list {
+  color: red;
+  list-style-type: none;
+}
+#row2 {
+  background-color: beige;
+}
+.headings {
+  font-style: bold;
+  color: black;
+}
+.data {
+  font-style: italic;
+  color: gray;
+}
+.flex-container {
+  display: flex;
+  /* flex-direction: row;
+  flex-wrap: wrap; */
+  flex-flow: row wrap;
+  background-color: cadetblue;
+  position: relative;
+  justify-content: center;
+  align-items: stretch;
+  overflow: scroll;
+  height: 200px;
+}
+.flex-container > div {
+  font-size: 30px;
+  /* width: 40px;
+  height: 40px; */
+  background-color: white;
+  position: center;
+  padding: 1em;
+  margin: 1em;
+  text-align: center;
+
+}
+
+.order {display:flex}
+
+.order div {width:100px;
+  height:100px;}
+
+#red {background-color:red;
+order:-2}
+#green {background-color:green}
+#blue {background-color:blue}
+#yellow {background-color:yellow;
+order: -1;}
+
+#form1 {background-color: antiquewhite;
+width: 60%;
+margin: 1rem 20%;
+padding: 1rem}
+
+#form2 {
+  
+  width: 80%;
+  margin: 10%;
+  background-color: #fffff0;
+  padding:1.2rem;
+}
+
+#form2 label {
+font-size:1.2rem;
+}
+
+#form2 input {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+#form2 input:hover {
+  background-color: azure;
+  border-color: blue;
+}
+
+#form2 select:hover {
+  background-color: azure;
+  border-color: blue;
+}
+
+#form2 input[type=submit]:hover {
+  cursor:pointer;
+}
+
+.cardtypesize {
+  font-size:1rem;
+  padding: 0.5rem;
+}

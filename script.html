@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joshua JS</title>
+    <style>
+      body {
+        font-family: Helvetica, sans-serif;
+      }
+      h3 {
+        color: navy;
+      }
+      h3 b {
+        color: slateblue;
+      }
+      .inline {
+        display: inline;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Wednesday 26th Feb, 2020 -->
+    <h3>Wednesday 26th Feb, 2020</h3>
+    <h4>Functions</h4>
+    <script>
+      document.write("<h4>Subtraction function</h4>");
+
+      function subtract(a, b) {
+        return a - b;
+      }
+
+      var a = 13;
+      var b = 5;
+
+      let result = subtract(a, b);
+      document.write(
+        "Subtract(a, b)<br><br>var a = 13<br>var b = 5<br><br>Return: " + result
+      );
+    </script>
+
+    <!-- Thursday 27th Feb, 2020 -->
+    <h3>Thursday 27th Feb, 2020</h3>
+    <h4>If statements</h4>
+    <script>
+      document.write(
+        "<b>Write game code</b><br>that will rank 'expert', if score is greater than 100 and player is at level 10 or over, else rank 'beginner'<br><br>"
+      );
+
+      var pScore = 101;
+      var pLevel = 11;
+
+      function level(pScore, pLevel) {
+        if (pScore > 100 && pLevel > 10) {
+          var rank = "Expert";
+        } else {
+          var rank = "Beginner";
+        }
+
+        return rank;
+      }
+
+      document.write(
+        "var score = 101<br>var level = 11<br><br>Rank: " +
+          level(pScore, pLevel) +
+          "<br>" +
+          "<br>"
+      );
+
+      document.write(
+        "<b>Write mark-up code</b><br>that will markup 'on sale', if clothes cost less than 50$ and color is black, else markup 'not on sale'<br><br>"
+      );
+
+      var item = 40;
+      var color = "black";
+
+      if (item < 50 && color == "black") {
+        var markup = "On sale!";
+      } else {
+        var markup = "Not on sale";
+      }
+
+      document.write("Price: $40<br>Colour: black<br><br>Markup: " + markup);
+    </script>
+
+    <!-- Monday 2nd Mar, 2020 -->
+    <h3>Monday 2nd Mar, 2020</h3>
+    <h4>Switch statements</h4>
+
+    <p><b>Give an output</b><br />based on the primary colour</p>
+    <p>
+      <input id="pColourText" type="text" placeholder="primary colour" />
+
+      <button onclick="pColour()">Submit</button>
+    </p>
+
+    <p id="switch">--</p>
+
+    <script>
+      function pColour() {
+        var text;
+        var pColour = document.getElementById("pColourText").value;
+
+        switch (pColour) {
+          case "red":
+            text = "Roses, ruby and blood";
+            break;
+          case "green":
+            text = "Leaves, trees and forests";
+            break;
+          case "blue":
+            text = "Seas, oceans and skies";
+            break;
+          default:
+            text = "Not a primary colour";
+        }
+        document.getElementById("switch").innerHTML = text;
+      }
+    </script>
+
+    <!-- Wednesday 4th Mar, 2020 -->
+    <h3>Wednesday 4th Mar, 2020</h3>
+    <h4>For loops</h4>
+
+    <script>
+      document.write(
+        "<b>A company wants to give a raise to employees.</b><br>Employees hired within the last 5 years get a 5% raise.<br>Employees hired within the last 10 years, 10%, and 15, 15%.<br><br>"
+      );
+
+      for (var year = 2005; year <= 2020; year++) {
+        if (year > 2015) {
+          document.write(year + " raise: 5%" + "<br>");
+        } else if (year > 2010 && year <= 2015) {
+          document.write(year + " raise: 10%" + "<br>");
+        } else {
+          document.write(year + " raise: 15%" + "<br>");
+        }
+      }
+    </script>
+
+    <!-- Thursday 5th Mar, 2020 -->
+    <h3>Thursday 5th Mar, 2020</h3>
+    <h4>While loops</h4>
+
+    <script>
+      document.write(
+        "<b>Print 5 numbers</b><br>starting at 0 while it is smaller than 5<br><br>"
+      );
+
+      var number1 = 0;
+      while (number1 < 5) {
+        document.write(number1 + " ");
+        number1++;
+      }
+
+      document.write("<br><br><b>2x table</b><br><br>");
+
+      var twoxtable = 1;
+      while (twoxtable < 13) {
+        document.write(twoxtable + " * 2 = " + twoxtable * 2 + "<br>");
+        twoxtable++;
+      }
+
+      document.write(
+        "<br><b>Check for player game health</b><br>with max at 10 and game over at 0<br><br>"
+      );
+
+      var playerHealth = 10;
+
+      while (playerHealth > 0) {
+        document.write(
+          "Player is alive. " + playerHealth + " lives remaining." + "<br>"
+        );
+        playerHealth--;
+      }
+
+      document.write("Player health is " + playerHealth + ". Game over.<br>");
+    </script>
+
+    <!-- Monday 9th Mar, 2020 -->
+    <h3>Monday 9th Mar, 2020</h3>
+    <h4>Do while loops</h4>
+    <h4>Creating a password for this page</h4>
+
+    <script>
+      // // Creating a password
+      // do {
+      //      var password = prompt ("Enter password");
+      //      if (password != "xx") {
+      //          alert("Incorrect password");
+      //      }
+      // }
+      // while (password != "xx")
+
+      // Age verification
+      document.write("<h4>Age verification to access this page</h4>");
+      // do {
+      //   var age = prompt("Enter your age");
+      //   if (age >= 18) {
+      //     document.write("You're old enough ;*");
+      //   } else {
+      //     alert("You're too young");
+      //   }
+      // } while (age < 18);
+    </script>
+
+    <!-- Wednesday 11th Mar, 2020 -->
+    <h3>Wednesday 11th Mar, 2020</h3>
+    <p>
+      <b>Make a game</b><br />that permits you to play only if you're over
+      18.<br />The player must solve math problems, gaining or losing 1
+      point.<br />Gameover when score reaches 0. Game won when score reaches 5.
+    </p>
+    <p>var randomGameNumber = (Math.floor(Math.random() * 10))</p>
+
+    <script>
+      // var age = prompt("How old are you?");
+      // var score = 0;
+
+      // // Age verification
+      // if (age >= 18) {
+      //   // Math problem
+      //   do {
+      //     var randomNumber1 = Math.floor(Math.random() * 50);
+      //     var randomNumber2 = Math.floor(Math.random() * 50);
+      //     var randomNumberAnswer = randomNumber1 * randomNumber2;
+      //     var userAnswer = prompt(
+      //       randomNumber1 + " * " + randomNumber2 + " = ? || Score: " + score
+      //     );
+
+      //     // Score+1 if answer correct
+      //     if (randomNumberAnswer == userAnswer) {
+      //       score++;
+      //       alert("Correct! Score: " + score);
+      //     }
+
+      //     // Score-1 if answer incorrect
+      //     else {
+      //       score--;
+      //       alert("Wrong! Score: " + score);
+      //     }
+      //   } while (
+      //     // Game continues so long as score is above 0
+      //     score > 0 &&
+      //     score < 5
+      //   );
+      //   // Game over alert
+      //   if (score <= 0) {
+      //     alert("Game over. Your score is " + score);
+      //   }
+      //   // Game won alert
+      //   else {
+      //     alert("You won! Your score is " + score);
+      //   }
+      // }
+
+      // // Alert if too young
+      // else {
+      //   alert("Too young!");
+      // }
+    </script>
+
+    <!-- Thursday 12th Mar, 2020 -->
+    <h3>Thursday 12th Mar, 2020 <b>recap</b></h3>
+
+    <h3>Monday 16th Mar, 2020</h3>
+    <h4>Arrays</h4>
+
+    <script>
+      var arrN = [1, 2, 3, 4, 5];
+
+      arrN[4] = 10; // Replaces the 4th index with 10
+
+      arrN.length; // Returns length of array
+
+      arrN.forEach(list);
+
+      function list(x) {
+        document.write("<li>" + x + "</li>");
+      }
+    </script>
+
+    <!-- Wednesday 18th Mar, 2020 -->
+    <h3>Wednesday 18th Mar, 2020</h3>
+    <script>
+      document.write("<h4>Array Methods</h4>");
+
+      var arrayM = [
+        "shifted",
+        "spliced out",
+        "spliced out2",
+        "sliced",
+        "popped",
+      ];
+
+      var arrayM2 = ["concatenated"];
+
+      arrayM.pop(); // Removes element from the end
+      arrayM.push("pushed"); // Adds to the end
+      arrayM.shift(); // Removes from the start
+      arrayM.unshift("unshifted"); // Adds to the start
+      arrayM.splice(1, 2, "spliced in"); // First number: position of insertion. 2nd number: amt of elements removed
+      arrayM[arrayM.length] = "lengthened"; // Adds to the end
+
+      arrayM = arrayM.concat(arrayM2, "concatenated2"); // Joins multiple arrays
+
+      document.write(arrayM.join(" * ") + "<br>" + "<br>");
+
+      // arrayM is now: ["unshifted", "spliced in", "sliced", "pushed", "length", "concatenated", "concatenated2"]
+
+      var slice = arrayM.slice(2); // Slices array from index placed in brackets
+
+      document.write(
+        "<b>From index 2: </b>" + slice.join(" * ") + "<br>" + "<br>"
+      );
+
+      var slice2 = arrayM.slice(2, 4); // Slice from 1st index to BEFORE 2nd
+
+      document.write("<b>From index 2 to 4: </b>" + slice2.join(" * "));
+
+      //***
+
+      document.write("<h4>Array Sort</h4>");
+
+      var arrayS = ["Dog", "Ant", "Cat", "Bee"];
+
+      arrayS.sort();
+      arrayS.reverse();
+
+      document.write(arrayS.join(" * ") + "<br>" + "<br>");
+
+      var arrayNumS = [10, 1, 9, 2, 8, 3, 7, 4, 6, 5];
+
+      arrayNumS.sort(function (a, b) {
+        return a - b;
+      }); // Ascending order
+
+      arrayNumS.sort(function (a, b) {
+        return b - a;
+      }); // Descending order
+
+      document.write(arrayNumS.join(" * ") + "<br>" + "<br>");
+
+      //***
+
+      document.write(
+        "<b>The map() Method</b><br>applies function to each element in array <br><br>"
+      );
+
+      function factor(x) {
+        if (x % 2 == 0) {
+          return "<li>" + x + " is even </li>";
+        } else if (x % 3 == 0) {
+          return "<li>" + x + " is divisible by 3 </li>";
+        } else {
+          return "<li>" + x + " is prime </li>";
+        }
+      }
+
+      document.write(arrayNumS.map(factor).join(""));
+    </script>
+
+    <!-- Thursday 19th Mar, 2020 -->
+    <h3>Thursday 19th Mar, 2020</h3>
+
+    <p>
+      <b>Use map() method</b><br />to create an array of even numbers from an
+      original array
+    </p>
+
+    <script>
+      var array1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+      //*** Ex. 1
+
+      // var arrayI = array1.map(evenCheck);
+
+      // function evenCheck(x) {
+      //   if (x % 2 == 0) {
+      //     return "<li>" + x + "</li>";
+      //   }
+      // }
+
+      // document.write("<ol>");
+      // document.write(arrayI.join(""));
+      // document.write("</ol>");
+
+      //*** Ex. 2
+
+      document.write(
+        "<p><b>Use for loop</b><br />to create an array of even numbers from an original array</p>"
+      );
+
+      var arrayII = [];
+
+      document.write("<ol>");
+
+      for (i = 0; i <= array1.length - 1; i++) {
+        if (array1[i] % 2 == 0) {
+          arrayII[i] = array1[i];
+          document.write("<li>" + arrayII[i] + "</li>");
+        }
+      }
+
+      document.write("</ol>");
+
+      //***
+
+      document.write("<p><b>Objects</b></p>");
+
+      var student = {
+        name: "Student Name",
+        age: 25,
+        major: "Web Development",
+        term1_grade: 4,
+        term2_grade: 4,
+        term3_grade: 3,
+        gpa: function () {
+          return (
+            (this.term1_grade + this.term2_grade + this.term3_grade) /
+            3
+          ).toFixed(1); // Rounding off to one decimal point
+        },
+      };
+
+      student.gpa = student.gpa().toString(); // So that student gpa doesn't display as a function
+
+      student.score = 20; // Adds score property to student object
+      student.age = 23; // Changes age
+      delete student.major; // Deletes major
+
+      // Rendering object values
+
+      // for (i = 0; i < Object.values(student).length; i++) {
+      //   document.write(Object.values(student)[i] + "<br>");
+      // }
+
+      // More efficiently written alternative of above for loop
+
+      // for (x in student) {
+      //   document.write(student[x] + "<br>");
+      // }
+
+      // Rendering object properties and values
+
+      document.write(JSON.stringify(student));
+
+      document.write(
+        "<p><b>Creating a property</b><br>from other properties within an object</p>"
+      );
+
+      var customer = {
+        id: 10049,
+        title: "Mrs. ",
+        fName: "Janet",
+        lName: "Donovan",
+        country: "Grenada",
+        parish: "St. Andrew",
+        village: "Tivoli",
+      };
+
+      customer.address = function () {
+        return this.village + " " + this.parish + ", " + this.country;
+      };
+
+      customer.address = customer.address().toString();
+
+      var customerDisplay =
+        customer.title +
+        customer.lName +
+        " - id: " +
+        customer.id +
+        "<br>" +
+        customer.address;
+
+      document.write(customerDisplay);
+    </script>
+
+    <!-- Monday 23rd Mar, 2020 -->
+    <h3>Monday 23rd Mar, 2020</h3>
+
+    <p><b>Create button</b><br />to prompt user greeting</p>
+
+    <button id="greeting">Greeting</button>
+
+    <p><b>Create button</b><br />to remove numbers from an array</p>
+
+    <button id="remove">Remove</button>
+    <p id="numArray"></p>
+
+    <p>
+      <b>Updating user information from the UI</b><br />Present customer data,
+      give option to update information, display updated info after entry
+    </p>
+
+    <h4>Customer information</h4>
+    <label for="name">Name: </label>
+    <p id="name" class="inline"></p>
+    <br />
+
+    <label for="age">Age: </label>
+    <p id="age" class="inline"></p>
+    <br />
+
+    <label for="address">Address: </label>
+    <p id="address" class="inline"></p>
+    <br />
+
+    <label for="phone">Phone number: </label>
+    <input id="phone" type="number" readonly="readonly" />
+    <br />
+    <button onclick="updatePhone()">Update number</button>
+
+    <script>
+      // Greeting user
+
+      document
+        .getElementById("greeting")
+        .addEventListener("click", function () {
+          var greeting = prompt("What is your name?");
+          alert("Welcome " + greeting + "!");
+        });
+
+      // Removing numbers from array
+
+      var numArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+      document.getElementById("numArray").innerHTML = numArray;
+
+      document.getElementById("remove").addEventListener("click", function () {
+        numArray.shift();
+        document.getElementById("numArray").innerHTML = numArray;
+      });
+
+      // Present customer data, give option to update information, display updated info after entry
+
+      var customer = {
+        name: "Joshua",
+        age: 25,
+        address: "Morne Fendue",
+        phone: 4069882,
+      };
+
+      document.getElementById("name").innerHTML = customer.name;
+      document.getElementById("age").innerHTML = customer.age;
+      document.getElementById("address").innerHTML = customer.address;
+      document.getElementById("phone").value = customer.phone;
+
+      function updatePhone() {
+        customer.phone = prompt(
+          "Your current number is " +
+            customer.phone +
+            ". Please enter your updated number."
+        );
+        document.getElementById("phone").value = customer.phone;
+      }
+    </script>
+
+    <!-- Wednesday 25th Mar, 2020 -->
+    <h3>Wednesday 25th Mar, 2020</h3>
+    <p>
+      <b>Program button</b><br />to add text input to an array and display in a
+      list
+    </p>
+
+    <label>Add item: </label>
+
+    <input type="text" placeholder="type here..." id="input" />
+
+    <button id="btn1" onclick="updateArray()">Add</button>
+
+    <p id="output"></p>
+
+    <script>
+      var inputArray, output;
+      inputArray = [];
+      output = ""; // Not necessary
+
+      //***
+
+      function updateArray() {
+        inputArray[length] = document.getElementById("input").value;
+        document.getElementById("input").value = ""; // Clears input after entry
+
+        for (i = 0; i < inputArray.length; i++) {
+          output += "<li>" + inputArray[i] + "</li>";
+        }
+
+        document.getElementById("output").innerHTML = output;
+      }
+
+      //***
+
+      // function updateArray() {
+      //   inputArray.push(document.getElementById("input").value);
+
+      //   output = "<ol>";
+      //   for (i = 0; i < inputArray.length; i++) {
+      //     output += "<li>" + inputArray[i] + "</li>";
+      //   }
+      //   output += "</ol>";
+
+      //   document.getElementById("output").innerHTML = output;
+      // }
+
+      //***
+
+      // .forEach. Syntax; myArray.forEach(function(element, index, array) {})
+      // Enables ordered list display. Without, list would default display as unordered
+
+      // output = "<ol>";
+      // inputArray.forEach(function() {});
+      // output += "</ol>";
+
+      // function updateArray() {
+      //   document.getElementById("output").innerHTML = output +=
+      //     "<li>" + document.getElementById("input").value;
+      //   +"</li>";
+      // }
+
+      //***
+
+      //Adding upkey event to #input by pressing enter
+
+      document
+        .querySelector("#input")
+        .addEventListener("keyup", function (event) {
+          if (event.keyCode === 13) {
+            document.getElementById("btn1").click();
+          }
+        });
+    </script>
+
+    <p>
+      <b>Add event listener</b><br />to second text input so that pressing enter
+      has same effect as clicking button
+    </p>
+
+    <input id="input1" type="text" /> <span>+</span>
+    <input id="input2" type="text" /> <span>=</span>
+    <input id="input3" type="text" />
+    <button id="btn2">Add</button>
+
+    <script>
+      // Function to add numbers in text fields 1 and 2, and display in 3
+      function add() {
+        var num1 = parseInt(document.getElementById("input1").value);
+        var num2 = parseInt(document.getElementById("input2").value);
+
+        document.getElementById("input3").value = num1 + num2;
+      }
+
+      // Event listener that runs add() function when button is clicked
+      document.getElementById("btn2").addEventListener("click", add);
+
+      // Event listener that runs function in button
+
+      // var input2 = document.querySelector("#input2");
+
+      // input2.addEventListener("keyup", function(event) {
+      //   if (event.keyCode === 13) {
+      //     document.getElementById("btn2").click();
+
+      // A more concise version of the code above
+      document
+        .querySelector("#input2")
+        .addEventListener("keyup", function (event) {
+          if (event.keyCode === 13) {
+            document.getElementById("btn2").click();
+          }
+        });
+    </script>
+
+    <!-- Thursday 26th Mar, 2020 -->
+    <h3>Thursday 26th Mar, 2020 <b>review class</b></h3>
+
+    <p><b>Click button</b><br />to change the source and style of an image</p>
+
+    <button id="day">Day</button>
+    <button id="night">Night</button><br />
+
+    <img
+      id="dayOrNight"
+      src="sun.jpg"
+      style="
+        width: 200px;
+        height: 200px;
+        border: solid orange 8px;
+        margin-top: 5px;
+      "
+    />
+
+    <!-- Inline alternative to acheiving the same function
+
+    <button
+      onclick="document.querySelector('#dayOrNight').src = 'sun.jpg' 
+      document.querySelector('#dayOrNight').setAttribute('style', 
+      'width:200px; height:200px; border:solid orange 8px; margin-top:5px')"
+    >
+      Day
+    </button>
+
+    <button
+      onclick="document.querySelector('#dayOrNight').src = 'star1.png'
+    document.querySelector('#dayOrNight').setAttribute('style',
+    'width:200px; height:200px; blue; border:solid purple 8px; margin-top:5px')"
+    >
+      Night</button
+    ><br />
+
+    <img
+      id="dayOrNight"
+      src="sun.jpg"
+      style="width:200px; height:200px; border:solid orange 8px; margin-top:5px"
+    /> -->
+
+    <script>
+      // Programing the Day button
+      document.querySelector("#day").addEventListener("click", function () {
+        document.querySelector("#dayOrNight").src = "sun.jpg";
+
+        document
+          .querySelector("#dayOrNight")
+          .setAttribute(
+            "style",
+            "width:200px; height:200px; border:solid orange 8px; margin-top:5px"
+          );
+      });
+
+      // Programming the Night button
+      document.querySelector("#night").addEventListener("click", function () {
+        document.querySelector("#dayOrNight").src = "star1.png";
+
+        document
+          .querySelector("#dayOrNight")
+          .setAttribute(
+            "style",
+            "width:200px; height:200px; border:solid purple 8px; margin-top:5px"
+          );
+      });
+    </script>
+
+    <!-- Monday 30th Mar, 2020 -->
+    <h3>Monday 30th Mar, 2020</h3>
+
+    <p>
+      <b>Create buttons</b><br />to go back and forth between the elements of an
+      array
+    </p>
+    <button id="backward">Backward</button>
+    <button id="forward">Forward</button>
+    <br />
+
+    <img src="flg1.png" id="flag" style="width: 200px; height: 200px;" />
+
+    <script>
+      var flagArray = ["flg1.png", "flg2.png", "flg3.png", "flg4.png"];
+      var flag = 0;
+
+      document
+        .querySelector("#backward")
+        .addEventListener("click", function () {
+          flag--;
+
+          if (flag < 0) {
+            flag = flagArray.length - 1;
+          }
+
+          document.getElementById("flag").src = flagArray[flag];
+        });
+
+      document.querySelector("#forward").addEventListener("click", function () {
+        flag++;
+
+        if (flag > flagArray.length - 1) {
+          flag = 0;
+        }
+
+        document.getElementById("flag").src = flagArray[flag];
+      });
+    </script>
+
+    <!-- Wednesday 1st Apr, 2020 -->
+    <h3>Wednesday 1st + Thursday 2nd Apr, 2020</h3>
+    <p>HTML DOM - creates a tree of HTML elements to be accessed by JS</p>
+
+    <p>
+      <b>Using appendChild()</b><br />to insert a styled paragraph into a div
+    </p>
+
+    <div id="container"></div>
+
+    <p>
+      <b>Appending multiple children</b>
+    </p>
+
+    <div id="container2"></div>
+
+    <p>
+      <b>More functions</b>
+    </p>
+
+    <div id="container3">
+      <ol id="oList">
+        <li>Child 1</li>
+        <li>Child 2</li>
+        <li>Child 3</li>
+      </ol>
+    </div>
+
+    <script>
+      // Append child function
+      var paragraph = document.createElement("p");
+
+      paragraph.textContent = "Hello";
+      paragraph.setAttribute("style", "background-color:red");
+
+      document.getElementById("container").appendChild(paragraph);
+
+      // Create elements
+      var uList = document.createElement("ul");
+      var lItem = document.createElement("li");
+      var lItem2 = document.createElement("li");
+
+      // Signifying them
+      uList.appendChild(lItem);
+      uList.appendChild(lItem2);
+      lItem.textContent = "number 1";
+      lItem2.textContent = "number 2";
+
+      // Placing them in HTML DOM
+      document.getElementById("container2").appendChild(uList);
+
+      // More functions
+
+      var child4 = document.createElement("li");
+      var child5 = document.createElement("li");
+
+      child4.textContent = "Child 4";
+      child5.textContent = "Child 5";
+
+      document.getElementById("oList").appendChild(child4);
+      document.getElementById("oList").removeChild(oList.childNodes[3]);
+      document.getElementById("oList").insertBefore(child5, oList.firstChild);
+      // document.getElementById("oList").replaceChild(child5, child4);
+
+      // Thursday 2nd Apr, 2020
+
+      // Cloning a node
+      // var newContainer = document.getElementById("oList").cloneNode(false); // False clones the element without the children
+      // document.getElementById("container3").appendChild(newContainer);
+
+      var newContainer = document.getElementById("oList").cloneNode(true);
+      document.getElementById("container3").appendChild(newContainer);
+
+      // container3.removeChild(newContainer);
+    </script>
+
+    <!-- Thursday 2nd Apr, 2020 -->
+    <h3>Thursday 2nd Apr, 2020</h3>
+    <p><b>cloneNODE()</b></p>
+
+    <script></script>
+
+    <h4>HTML DOM exercise</h4>
+
+    <div class="header"></div>
+    <section id="container">
+      <ul>
+        <li class="first">one</li>
+        <li class="second">two</li>
+        <li class="third">three</li>
+      </ul>
+      <ol>
+        <li class="first">one</li>
+        <li class="second">two</li>
+        <li class="third">three</li>
+      </ol>
+    </section>
+    <div class="footer"></div>
+
+    <script>
+      // 1. Select the section with an id of container without using querySelector.
+      var container = document.getElementById("container");
+
+      // 2. Select the section with an id of container using querySelector.
+      document.querySelector("#container");
+
+      // 3. Select all of the list items with class "second".
+      document.querySelectorAll(".second");
+      document.getElementsByClassName("second");
+
+      // 4. Select a list item with class “third”, but only the list item inside of the ol tag.
+      document.querySelector("ol .third");
+
+      // 5. Give the section with an id of container the text "Hello!".
+      // container.innerHTML = "Hello!";
+      // container.textContent = "Hello!";
+      // container.innerText = "Hello!";
+
+      // 6. Add the class “main” to the div with class “footer”.
+      document.querySelector(".footer").className += " main";
+      document.querySelector(".footer").classList.add("main");
+
+      // 7. Create a new li element. 8. Give the li the text "four". 9. Append the li to the ul element.
+      var li4 = document.createElement("li");
+      li4.textContent = "four";
+      document.querySelector("ul").appendChild(li4);
+
+      // 10. Loop over all of the lis inside the ol tag and give them a background color of "green".
+      // var ol_li = document.querySelectorAll("ol li");
+
+      // for (i = 0; i < ol_li.length; i++) {
+      //   ol_li[i].style.backgroundColor = "green";
+      // }
+
+      // 11. Remove the div with class “footer”.
+      // document.querySelector(".footer").remove();
+    </script>
+  </body>
+</html>
